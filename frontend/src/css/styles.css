@@ -1,21 +1,26 @@
+/* Root Variables */
 :root {
-    --colorTitulos: #1D3A6C;
-    --fuenteTitulos: nunito, sans-serif;
-    --fuenteContenido: Open Sans, sans-serif;
-    --margenInferiorTitulos: 30px;
-    --tamañoSeccionesTitulos: 26px;
-    --tamañoFuente: 15px;
-    --parallaxFondoTransparente: #1D3A6C;
+    --colorTitulos: #1D3A6C; /* Color principal para los títulos */
+    --fuenteTitulos: nunito, sans-serif; /* Fuente para los títulos */
+    --fuenteContenido: Open Sans, sans-serif; /* Fuente para el contenido */
+    --margenInferiorTitulos: 30px; /* Margen inferior para los títulos */
+    --tamañoSeccionesTitulos: 26px; /* Tamaño de fuente para los títulos de secciones */
+    --tamañoFuente: 15px; /* Tamaño de fuente general */
+    --parallaxFondoTransparente: #1D3A6C; /* Color de fondo para efectos de parallax */
 }
 
+/* Clase para ocultar elementos */
 .hidden {
     display: none;
+    visibility: hidden;
 }
 
+/* Estilos para la navegación móvil */
 .navigation {
     display: none;
 }
 
+/* Cabecera */
 .header {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -38,19 +43,19 @@
     border: none;
 }
 
+/* Menú principal */
 .menu {
     position: fixed;
     top: 0;
     left: 0;
     width: 80%;
     height: 100%;
-    background-color: #000000ee;
+    background-color: #000000ff; /* Fondo negro con opacidad */
     color: #ffffff;
     z-index: 100;
     padding: 20px;
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-
+    transition: transform 0.3s ease-in-out; /* Animación para mostrar el menú */
 }
 
 .menu__list {
@@ -81,13 +86,13 @@
 
 .menu.active {
     transform: translateX(0);
-
 }
 
 .menu__subitem {
     list-style: none;
 }
 
+/* Estilo de los subenlaces */
 .menu__sublink {
     color: #ffffff;
     text-decoration: none;
@@ -98,6 +103,7 @@
     text-decoration: underline;
 }
 
+/* Botón de salida del menú */
 .menu__exit {
     position: absolute;
     top: 10px;
@@ -112,6 +118,7 @@
     margin-right: 2px;
 }
 
+/* Logo de la cabecera */
 .header__logo {
     display: inline-block;
     width: 110px;
@@ -121,10 +128,91 @@
 .header__logo img {
     width: 110px;
     background-color: transparent; 
-    
     margin-left: 10px;
 }
 
+/* Modal de superposición */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.modal-overlay.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-container {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-title {
+    margin: 0;
+    font-size: var(--tamañoSeccionesTitulos);
+}
+
+/* Botón de cierre del modal */
+.modal-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilos del formulario de inicio de sesión en el modal */
+.modal-form-login label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.modal-form-login input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-form-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--parallaxFondoTransparente);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.modal-form-login button:hover {
+    background-color: #183059;
+}
+
+/* Estilos de la sección principal */
 .main {
     margin-top: 230px;
     position: relative;
@@ -165,7 +253,7 @@
     width: 100%;
     background-color: var(--parallaxFondoTransparente);
     color: #ffffff;
-    
+    cursor: pointer;
 }
 
 .main__card-description {
@@ -178,6 +266,7 @@
     margin-bottom: 10px;
 }
 
+/* Contenedor de los logos de los partners */
 .container-partners {
     display: flex;
     gap: 10px;
@@ -191,6 +280,7 @@
     object-fit: cover;
 }
 
+/* Sección de registro */
 .main__section--registro {
     display: flex;
     flex-direction: column;
@@ -204,15 +294,15 @@
     margin: 20px;
 }
 
+/* Formulario de registro */
 .main__register-form {
     width: 80%;
 }
 
-
+/* Estilos generales de formularios */
 .main__form {
     display: flex;
     flex-direction: column;
-    
 }
 
 .main__form-title {
@@ -255,15 +345,16 @@
     pointer-events: none;
 }
 
+/* Estilos del pie de página */
 .footer {
     background-color: var(--parallaxFondoTransparente);
     color: #ffffff;
 }
 
+/* Bloques dentro del pie de página */
 .footer__block {
     display: flex;
     flex-direction: column;
-
 }
 
 .footer__button {
@@ -312,6 +403,7 @@
     align-items: center;
 }
 
+/* Lista de redes sociales */
 .footer__social-list {
     display: flex;
     justify-content: center;
@@ -320,8 +412,9 @@
     list-style: none;
 }   
 
+/* --------------------------- Media queries para hacer el diseño responsive --------------------------- */
 
-
+/* Para pantallas mínimas de 400px */
 @media (min-width: 400px) {
     .main__section--novedades {
         display: grid;
@@ -337,7 +430,6 @@
 
     .main__section--registro {
         flex-direction: row;
-        
     }
 
     .main__register-image {
@@ -349,6 +441,7 @@
     }
 }
 
+/* Para pantallas mínimas de 650px */
 @media (min-width: 650px) {
     .navigation__button-hamburger {
         display: none;
@@ -364,7 +457,7 @@
         gap: 5px;
         grid-template-columns: repeat(4, auto) 1fr;
     }
-    
+
     .navigation__item {
         list-style: none;
     }
@@ -373,11 +466,10 @@
         justify-self: end;
         margin-right: 5px;
     }
-    
 
     .navigation__link {
-        display: inline-flex; 
-        align-items: center; 
+        display: inline-flex;
+        align-items: center;
         text-decoration: none;
         color: #ffffff;
         font-weight: bold;
@@ -393,17 +485,18 @@
     }
 }
 
+/* Para pantallas mínimas de 768px */
 @media (min-width: 768px) {
+    .navigation__list {
+        gap: 20px;
+    }
+
     .main__section--novedades {
         width: 80%;
-        
-    }
-
-    .main__section--novedades {
         justify-content: center;
         grid-template-columns: 50% repeat(2, auto);
-
     }
+
     .main__title {
         text-align: start;
         margin-left: 20px;
@@ -422,19 +515,19 @@
     }
 
     .footer__section {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start; 
-    flex-wrap: wrap;
-    padding: 10px;
-    gap: 10px; 
-    background-color: var(--parallaxFondoTransparente); 
-}
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        padding: 10px;
+        gap: 10px;
+        background-color: var(--parallaxFondoTransparente);
+    }
 
     .footer__block {
         flex: 1;
-        min-width: 200px; 
-        max-width: 300px; 
+        min-width: 200px;
+        max-width: 300px;
     }
 
     .footer__button {

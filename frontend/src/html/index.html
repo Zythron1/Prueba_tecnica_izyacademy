@@ -17,28 +17,36 @@
 </head>
 
 <body>
+    <!-- Contenedor del encabezado de la página -->
     <header class="header">
+        <!-- Banner de la parte superior -->
         <img class="header__banner" src="../assets/fotos/imagenesFondo/banner_home.webp" alt="banner_home">
-
-        <button type="button" class="navigation__button-hamburger transparent" id="button-exit-menu"><svg xmlns="http://www.w3.org/2000/svg"
-                width="24" height="24" viewBox="0 0 24 24">
+    
+        <!-- Botón para salir del menú móvil -->
+        <button type="button" class="navigation__button-hamburger transparent" id="button-exit-menu">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                 <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                     d="M3 17h18M3 12h18M3 7h18" />
             </svg>
         </button>
-
+    
+        <!-- Menú de navegación móvil -->
         <div class="menu">
+            <!-- Botón para cerrar el menú -->
             <div class="menu__exit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path fill="white" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M18 6L6 18M6 6l12 12" />
                 </svg>
             </div>
-
+    
+            <!-- Lista de elementos del menú -->
             <ul class="menu__list">
+                <!-- Enlace de inicio -->
                 <li class="menu__item">
-                    <a href="#" class="menu__link">Inicio</a>
+                    <a href="http://localhost:3000/frontend/src/html/index.html" class="menu__link">Inicio</a>
                 </li>
+                <!-- Menú desplegable "Rutas de Información" -->
                 <li class="menu__item">
                     <button type="button" class="menu__button">Rutas de Información</button>
                     <div class="menu__dropdown">
@@ -55,6 +63,7 @@
                         </ul>
                     </div>
                 </li>
+                <!-- Menú desplegable "Cursos" -->
                 <li class="menu__item">
                     <button type="button" class="menu__button">Cursos</button>
                     <div class="menu__dropdown">
@@ -71,60 +80,103 @@
                         </ul>
                     </div>
                 </li>
+                <!-- Enlace "Quiénes Somos" -->
                 <li class="menu__item">
                     <a href="#" class="menu__link">Quienes Somos</a>
                 </li>
+                <!-- Botón de iniciar sesión -->
                 <li class="menu__item">
-                    <button type="button" class="menu__button">Iniciar Sesión</button>
+                    <button type="button" class="menu__button" id="login-button-1">Iniciar Sesión</button>
                 </li>
             </ul>
         </div>
-
+    
+        <!-- Logo de la página -->
         <h1 class="header__logo">
-            <a href="http://localhost:3000/frontend/src/html/index.html"><img src="../assets/marca/logo_actualizado.png" alt="izyacademy"></a>
+            <a href="http://localhost:3000/frontend/src/html/index.html"><img src="../assets/marca/logo_actualizado.png"
+                    alt="izyacademy"></a>
         </h1>
-
+    
+        <!-- Barra de navegación principal -->
         <nav class="navigation">
             <ul class="navigation__list">
+                <!-- Enlace de inicio -->
                 <li class="navigation__item">
                     <a class="navigation__link" href="http://localhost:3000/frontend/src/html/index.html">Inicio</a>
                 </li>
+                <!-- Enlace "Rutas de Información" con un icono -->
                 <li class="navigation__item">
                     <a class="navigation__link" href="#">Rutas de Información
-                        <svg xmlns="http://www.w3.org/2000/svg" class="navidation__svg" width="18" height="18" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="navidation__svg" width="18" height="18"
+                            viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="m6 9l6 6l6-6" />
                         </svg>
                     </a>
                 </li>
+                <!-- Enlace "Cursos" con un icono -->
                 <li class="navigation__item">
                     <a class="navigation__link" href="#">Cursos
-                        <svg xmlns="http://www.w3.org/2000/svg" class="navidation__svg" width="18" height="18" viewBox="0 0 24 24">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="navidation__svg" width="18" height="18"
+                            viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="2" d="m6 9l6 6l6-6" />
                         </svg>
                     </a>
                 </li>
+                <!-- Enlace "Quiénes Somos" -->
                 <li class="navigation__item">
                     <a class="navigation__link" href="#">Quiénes Somos</a>
                 </li>
+                <!-- Enlace de "Iniciar sesión" con icono -->
                 <li class="navigation__item">
-                    <a class="navigation__link black" href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="navidation__svg" width="17" height="17" viewBox="0 0 24 24">
+                    <a class="navigation__link black" id="login-button-2" href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="navidation__svg" width="17" height="17"
+                            viewBox="0 0 24 24">
                             <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                 stroke-width="1.5"
                                 d="M19.523 21.99H4.488c-1.503 0-2.663-1.134-2.466-2.624l.114-.869c.207-1.2 1.305-1.955 2.497-2.214L11.928 15h.144l7.295 1.283c1.212.28 2.29.993 2.497 2.214l.114.88c.197 1.49-.963 2.623-2.466 2.623zM17 7A5 5 0 1 1 7 7a5 5 0 0 1 10 0" />
                         </svg>
                         Iniciar Sesión
                     </a>
+    
                 </li>
             </ul>
+    
+            <!-- Modal para iniciar sesión (invisible por defecto) -->
+            <div class="modal-overlay hidden" id="modal-login">
+                <div class="modal-container">
+                    <div class="modal-header">
+                        <button class="modal-close" id="login-close">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="black" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="M18 6L6 18M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <h3 class="modal-title">Iniciar Sesión</h3>
+                    </div>
+                    <form class="modal-form-login" id="login-form">
+                        <label for="email-login">Email</label>
+                        <input type="email" id="email-login" placeholder="Email" required>
+    
+                        <label for="password-login">Contraseña</label>
+                        <input type="password" id="password-login" placeholder="Contraseña" required>
+    
+                        <button type="submit">Entrar</button>
+                    </form>
+                </div>
+            </div>
+    
         </nav>
     </header>
 
     <main class="main">
+
+        <!-- Sección de novedades -->
         <h3 class="main__title">Novedades</h3>
         <section class="main__section main__section--novedades">
+
+            <!-- Tarjeta 1 -->
             <div class="main__card doble">
                 <img class="main__card-image" src="../assets/fotos/imagenesTarjetas/tarjeta1.jpg" alt="" width="400px">
                 <button class="main__card-button" type="button">
@@ -133,6 +185,8 @@
                 <p class="main__card-description">En IzaAcademy encontrarás una gran variedad de cursos para que puedas
                     aprender yt sunt molestias perspiciatis. Dignissimos fugiat corrupti ipsa pariatur..</p>
             </div>
+
+            <!-- Tarjeta 2 -->
             <div class="main__card change">
                 <img class="main__card-image" src="../assets/fotos/imagenesTarjetas/tarjeta2.jpg" alt="" width="400px">
                 <button class="main__card-button" type="button">
@@ -140,8 +194,11 @@
                 </button>
                 <p class="main__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, autem
                     eaque? Sit iste accusantium corrupti nam repudiandae illum quos aperiam itaque fugiat. Nobis, rem
-                    veritatis exercitationem ist. Saepe, corrupti error? Recusandae sunt sit ab ullam, labore eaque. Voluptatem consequatur pariatur nemo..</p>
+                    veritatis exercitationem ist. Saepe, corrupti error? Recusandae sunt sit ab ullam, labore eaque.
+                    Voluptatem consequatur pariatur nemo..</p>
             </div>
+
+            <!-- Tarjeta 3 -->
             <div class="main__card change">
                 <img class="main__card-image" src="../assets/fotos/imagenesTarjetas/tarjeta3.jpg" alt="" width="400px">
                 <button class="main__card-button" type="button">
@@ -149,16 +206,22 @@
                 </button>
                 <p class="main__card-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
                     temporibus exercitationem nulla porro. Adipisci expedita aliquam perspiciatis distinctio dolores
-                    suscipit, numquam eos ab, sint quam perferendis, illum reprehenderit inventore blanditiis Lorem ipsum dolor sit amet consectetur adipisicing elit. Plare perspiciatis enim accusamus quia ab!?</p>
+                    suscipit, numquam eos ab, sint quam perferendis, illum reprehenderit inventore blanditiis Lorem ipsum
+                    dolor sit amet consectetur adipisicing elit. Plare perspiciatis enim accusamus quia ab!?</p>
             </div>
+
+            <!-- Tarjeta 4 -->
             <div class="main__card change">
                 <img class="main__card-image" src="../assets/fotos/imagenesTarjetas/tarjeta4.jpg" alt="" width="400px">
                 <button class="main__card-button" type="button">
                     <h3 class="main__card-title">Certificaciones e insignias</h3>
                 </button>
                 <p class="main__card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto, deleniti.
-                    Magni debitis ea, ullam n maiores tempora quisquam reiciendis animi, necessitatibus repellendus nam placeat cumque odio ab eligendi itaque aliquam.t.</p>
+                    Magni debitis ea, ullam n mayores tempora quisquam reiciendis animi, necessitatibus repellendus nam
+                    placeat cumque odio ab eligendi itaque aliquam.t.</p>
             </div>
+
+            <!-- Tarjeta 5 -->
             <div class="main__card change">
                 <img class="main__card-image" src="../assets/fotos/imagenesTarjetas/tarjeta2.jpg" alt="" width="400px">
                 <button class="main__card-button" type="button">
@@ -169,11 +232,20 @@
                     amet exercitationem reruga.llum obcaecati.</p>
             </div>
         </section>
-    <hr>
+
+        <hr>
+
+        <!-- Sección de aliados -->
         <section class="main__section main__section--aliados">
             <h3 class="main__title centered-text">Aliados</h3>
-            <p class="main__section--description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae dolorum aperiam minima consequatur repellendus, sed facere quas provident architecto quam dolores. Libero veniam amet tempora facere corrupti aut possimus mollitia? </p>
+            <p class="main__section--description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+                dolorum aperiam minima consequatur repellendus, sed facere quas provident architecto quam dolores. Libero
+                veniam amet tempora facere corrupti aut possimus mollitia? </p>
+
+            <!-- Contenedor de imágenes de los aliados -->
             <div class="container-partners">
+
+                <!-- Aliados -->
                 <div class="main__partner">
                     <img class="main__partner-image" src="../assets/fotos/Aliados/certiprof.jpg" alt="certiprof">
                 </div>
@@ -198,65 +270,87 @@
                 <div class="main__partner">
                     <img class="main__partner-image" src="../assets/fotos/Aliados/sena.png" alt="sena">
                 </div>
+
             </div>
-            
         </section>
     
+        <!-- Sección de registro -->
         <section class="main__section main__section--registro">
             <img class="main__register-image" src="../assets/fotos/imagenesRegistro/imagenRegistro.PNG" alt="">
             <div class="main__register-form">
+
+                <!-- Formulario de registro -->
                 <form class="main__form" id="register-form">
                     <h3 class="main__form-title">Regístrate</h3>
 
-                        <label class="main__form-label" for="name">Nombre</label>
-                        <input class="main__form-input" id="name" type="text" placeholder="Nombre" required>
+                    <!-- Campo nombre -->
+                    <label class="main__form-label" for="name">Nombre</label>
+                    <input class="main__form-input" id="name" type="text" placeholder="Nombre" required>
 
-                        <label class="main__form-label" for="last-name">Apellido</label>
-                        <input class="main__form-input" id="last-name" type="text" placeholder="Apellido" required>
+                    <!-- Campo apellido -->
+                    <label class="main__form-label" for="last-name">Apellido</label>
+                    <input class="main__form-input" id="last-name" type="text" placeholder="Apellido" required>
 
-                        <label class="main__form-label" for="email">Correo electrónico</label>
-                        <input class="main__form-input" id="email" type="email" placeholder="Correo electrónico" required>
+                    <!-- Campo correo electrónico -->
+                    <label class="main__form-label" for="email">Correo electrónico</label>
+                    <input class="main__form-input" id="email" type="email" placeholder="Correo electrónico" required>
 
-                        <label class="main__form-label" for="password">Contraseña</label>
-                        <input class="main__form-input" id="password" type="password" placeholder="Contraseña" required>
+                    <!-- Campo contraseña -->
+                    <label class="main__form-label" for="password">Contraseña</label>
+                    <input class="main__form-input" id="password" type="password" placeholder="Contraseña" required>
 
-                        <label class="main__form-label" for="confirm-password">Confirmar contraseña</label>
-                        <input class="main__form-input" id="confirm-password" type="password" placeholder="Confirmar contraseña" required>
+                    <!-- Campo confirmación de contraseña -->
+                    <label class="main__form-label" for="confirm-password">Confirmar contraseña</label>
+                    <input class="main__form-input" id="confirm-password" type="password" placeholder="Confirmar contraseña"
+                        required>
 
-                        <label class="main__form-checkbox"  for="terminos">
-                            <input type="checkbox" id="terminos">
-                            Acepto los términos y condiciones
-                        </label>
+                    <!-- Checkbox de términos y condiciones -->
+                    <label class="main__form-checkbox" for="terminos">
+                        <input type="checkbox" id="terminos">
+                        Acepto los términos y condiciones
+                    </label>
 
-                        <label class="main__form-checkbox" for="tratamiento-datos">
-                            <input type="checkbox" id="tratamiento-datos">
-                            Acepto política de tratamiento de datos
-                        </label>
+                    <!-- Checkbox de tratamiento de datos -->
+                    <label class="main__form-checkbox" for="tratamiento-datos">
+                        <input type="checkbox" id="tratamiento-datos">
+                        Acepto política de tratamiento de datos
+                    </label>
 
-                    <button class="main__form-button  opacity50" id="register-button" type="submit" disabled>Registrarse</button>
+                    <!-- Botón de registro (deshabilitado por defecto) -->
+                    <button class="main__form-button  opacity50" id="register-button" type="submit"
+                        disabled>Registrarse</button>
                 </form>
             </div>
         </section>
     </main>
 
+
     <footer class="footer">
+
+        <!-- Sección principal del footer que contiene los bloques con diferentes categorías -->
         <section class="footer__section">
+
+            <!-- Bloque de contacto -->
             <div class="footer__block">
                 <button type="button" class="footer__button">
                     <h2 class="footer__title">Contáctanos</h2>
                 </button>
                 <ul class="footer__list">
+                    <!-- Información de contacto por email y WhatsApp -->
                     <li>Email: <a href="mailto:comercial@qvision.us"
                             class="footer__link"><strong>comercial@qvision.us</strong></a></li>
                     <li>WhatsApp: <strong>+300 255 02 65</strong></li>
                     <li>Comunícate con nosotros</li>
                 </ul>
             </div>
+
+            <!-- Bloque de categorías de cursos -->
             <div class="footer__block">
                 <button type="button" class="footer__button">
                     <h2 class="footer__title">Categorías de cursos</h2>
                 </button>
                 <ul class="footer__list">
+                    <!-- Lista de categorías de cursos -->
                     <li>Desarrollo</li>
                     <li>Metodología de Pruebas</li>
                     <li>Pruebas Funcionales</li>
@@ -266,11 +360,14 @@
                     <li>Automatización</li>
                 </ul>
             </div>
+
+            <!-- Bloque de certificaciones -->
             <div class="footer__block">
                 <button type="button" class="footer__button">
                     <h2 class="footer__title">Certificaciones</h2>
                 </button>
                 <ul class="footer__list">
+                    <!-- Lista de certificaciones ofrecidas -->
                     <li>Scrum Master</li>
                     <li>Scrum Product Owner</li>
                     <li>Scrum Developer</li>
@@ -281,11 +378,14 @@
                     <li>DevOps</li>
                 </ul>
             </div>
+
+            <!-- Bloque de servicios de Q-Vision Technologies -->
             <div class="footer__block">
                 <button type="button" class="footer__button">
                     <h2 class="footer__title">Q-Vision Technologies</h2>
                 </button>
                 <ul class="footer__list">
+                    <!-- Lista de servicios que ofrece Q-Vision Technologies -->
                     <li>Desarrollo de Software</li>
                     <li>Aseguramiento de Calidad</li>
                     <li>Automatización de Procesos con RPA</li>
@@ -293,31 +393,42 @@
                     <li>Gestión Inteligente de Datos</li>
                 </ul>
             </div>
+
+            <!-- Bloque de soporte -->
             <div class="footer__block">
                 <button type="button" class="footer__button ">
                     <h2 class="footer__title">Soporte</h2>
                 </button>
-                <p class="footer__text-contact footer__list">Si tienes inconvenientes o dudas, contáctanos al correo <a href="mailto:izyacademy@qvision.us"
-                        class="footer__link">izyacademy@qvision.us</a>.</p>
+                <p class="footer__text-contact footer__list">
+                    <!-- Información de contacto para soporte -->
+                    Si tienes inconvenientes o dudas, contáctanos al correo
+                    <a href="mailto:izyacademy@qvision.us" class="footer__link">izyacademy@qvision.us</a>.
+                </p>
             </div>
         </section>
+
+        <!-- Sección secundaria del footer con enlaces y redes sociales -->
         <section class="footer__section footer__section--secondary">
             <div class="footer__terms">
                 <p class="footer__terms-text">
+                    <!-- Enlaces a términos y condiciones y política de tratamiento de datos -->
                     <a href="#" class="footer__link">Términos y Condiciones</a> -
                     <a href="#" class="footer__link">Política de Tratamiento de Datos</a>
                 </p>
             </div>
+
+            <!-- Sección de redes sociales -->
             <nav class="footer__socials" aria-label="Redes Sociales">
                 <ul class="footer__social-list">
+                    <!-- Enlace a Facebook -->
                     <li><a href="#" class="footer__social-link" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"
-                                viewBox="0 0 24 24">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black" viewBox="0 0 24 24">
                                 <path
                                     d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4z" />
                             </svg>
                         </a></li>
 
+                    <!-- Enlace a Twitter (X) -->
                     <li><a href="#" class="footer__social-link" aria-label="X - Twitter">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="black"
                                 viewBox="0 0 128 128">
@@ -326,6 +437,7 @@
                             </svg>
                         </a></li>
 
+                    <!-- Enlace a Instagram -->
                     <li><a href="#" class="footer__social-link" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="24" viewBox="0 0 448 512">
                                 <path fill="black"
@@ -333,16 +445,20 @@
                             </svg>
                         </a></li>
 
-                    <li><a href="#" class="footer__social-link" aria-label="LinkedIn">
+                    <!-- Enlace a LinkedIn -->
+                    <li>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="-2 -2 24 24">
                                 <path fill="black"
                                     d="M19.959 11.719v7.379h-4.278v-6.885c0-1.73-.619-2.91-2.167-2.91c-1.182 0-1.886.796-2.195 1.565c-.113.275-.142.658-.142 1.043v7.187h-4.28s.058-11.66 0-12.869h4.28v1.824l-.028.042h.028v-.042c.568-.875 1.583-2.126 3.856-2.126c2.815 0 4.926 1.84 4.926 5.792M2.421.026C.958.026 0 .986 0 2.249c0 1.235.93 2.224 2.365 2.224h.028c1.493 0 2.42-.989 2.42-2.224C4.787.986 3.887.026 2.422.026zM.254 19.098h4.278V6.229H.254z" />
                             </svg>
-                        </a></li>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </section>
     </footer>
+
 
     <script type="module" src="/main.js"></script>
 </body>

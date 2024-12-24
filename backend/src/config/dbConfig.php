@@ -18,6 +18,6 @@ return [
     'host' => 'localhost',  //127.0.0.1
     'dbname' => 'IziAcademy_db',
     'username' => 'root',
-    'password' => '3105180466Df',
+    'password' => '',
     'codificacion' => 'charset=utf8mb4',
 ];

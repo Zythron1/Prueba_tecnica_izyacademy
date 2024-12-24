@@ -1,1 +1,0 @@
-USE RichMond_db;
