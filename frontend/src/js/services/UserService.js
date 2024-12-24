@@ -1,27 +1,35 @@
 class UserService {
 
-    async requestToCreateUser (userData) {
-        return fetch('http://localhost:3000/user', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userData)
-        })
-        .then(response => response.json())
-        .then(data => {
+    async requestToCreateUser(credentialInformation) {
+        try {
+            const response = await fetch('http://localhost:3000/user', {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(credentialInformation)
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Error en la petición.');
+            }
+
+            const data = await response.json();
+
             if (data.status === 'error') {
                 throw new Error(data.message);
             }
-            alert(data.message);
+
             return data;
-        })
-        .catch(error => {
-            console.error('Error en la petición. ' + error);
+
+        } catch (error) {
+            console.error('Error en la petición:', error.message);
             alert('Hubo un error al procesar la solicitud. Inténtalo de nuevo.');
-            return {'status': 'error'};
-        });
+            return { status: 'error', message: error.message };
+        }
     }
+
 
 
     async requestToLogin (userData) {
@@ -47,27 +55,6 @@ class UserService {
         })
     }
 
-    
-    requestToPasswordRecovery (userData) {
-        fetch('http://localhost:3000/user/resetPassword', {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(userData)
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.status === 'error') {
-                throw new Error(data.message);
-            }
-            alert(data.message);
-        })
-        .catch(error => {
-            console.error('Error en la petición. ' + error);
-            alert(error);
-        })
-    }
 
 
     async requestToLogout () {

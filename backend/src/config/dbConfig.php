@@ -16,7 +16,7 @@
 */
 return [
     'host' => 'localhost',  //127.0.0.1
-    'dbname' => 'RichMond_db',
+    'dbname' => 'IziAcademy_db',
     'username' => 'root',
     'password' => '3105180466Df',
     'codificacion' => 'charset=utf8mb4',

@@ -9,19 +9,24 @@ const UserViewInstance = new UserView;
 
 
 class UserController {
-    createUser(credentialInformation) {
+    async createUser(credentialInformation) {
         if (!UserModelInstance.validateUserData(credentialInformation)) {
             return;
-        } 
+        }
 
-        UserServiceInstance.requestToCreateUser(data)
-        .then(data => {
-            if (data.status === 'success') {
-                loginButton.click();
-            }
-        })
-        
+        const data = await UserServiceInstance.requestToCreateUser(credentialInformation);
+
+        if (data.status === 'success') {
+            alert(data.message);
+            
+            const form = document.getElementById('register-form');
+            form.reset();
+        } else {
+            alert(data.message);
+        }
     }
+
+
 
     login (data) {
         if (!UserModelInstance.validateUserData(data)) {
@@ -58,14 +63,6 @@ class UserController {
                 UserViewInstance.renderProductInShoppingBag(localStorage.getItem('shoppingBagProducts'));
             }
         });
-    }
-
-    passwordRecovery (data) {
-        if (!UserModelInstance.validateUserData(data)) {
-            return;
-        }
-
-        UserServiceInstance.requestToPasswordRecovery(data);
     }
 }
 

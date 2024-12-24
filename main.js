@@ -12,11 +12,11 @@ const registerButton = document.getElementById('register-button');
 
 const updateButtonState = () => {
     if (checkboxTerminos.checked && checkboxTratamientoDatos.checked) {
-        registerButton.disabled = false; // Habilitar botón
-        registerButton.classList.remove('opacity50'); // Quitar opacidad
+        registerButton.disabled = false;
+        registerButton.classList.remove('opacity50');
     } else {
-        registerButton.disabled = true; // Deshabilitar botón
-        registerButton.classList.add('opacity50'); // Añadir opacidad
+        registerButton.disabled = true;
+        registerButton.classList.add('opacity50');
     }
 };
 
@@ -26,6 +26,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
     checkboxTerminos.addEventListener('change', updateButtonState);
     checkboxTratamientoDatos.addEventListener('change', updateButtonState);
+
+    // Selección de elementos
+    const hamburgerButton = document.querySelector(".navigation__button-hamburger");
+    const menu = document.querySelector(".menu");
+    const buttonExitMenu = document.querySelector(".menu__exit");
+
+    // Abrir menú
+    hamburgerButton.addEventListener("click", () => {
+        menu.classList.add("active"); 
+    });
+
+    // Cerrar menú
+    buttonExitMenu.addEventListener("click", () => {
+        menu.classList.remove("active");
+    });
+
+    // Abrir y cerrar contenido footer
+    const footerButtons = document.querySelectorAll(".footer__button");
+    const footerLists = document.querySelectorAll(".footer__list");
+
+    // Iterar sobre cada botón
+    footerButtons.forEach((button, index) => {
+        button.addEventListener("click", () => {
+            const footerContent = footerLists[index];
+            footerContent.classList.toggle("hidden");
+        });
+    });
+
+    
 });
 
 
@@ -46,8 +75,8 @@ registerForm.addEventListener('submit', e => {
         'emailAddress': email,
         'userPassword': password,
         'confirmPassword': confirmPassword,
-        'terminos': checkboxTerminos.checked,  // Asegúrate de enviar el estado del checkbox
-        'tratamientoDatos': checkboxTratamientoDatos.checked // Igual aquí
+        'terminos': checkboxTerminos.checked,
+        'tratamientoDatos': checkboxTratamientoDatos.checked
     };
 
     UserControllerInstance.createUser(credentialInformation);
